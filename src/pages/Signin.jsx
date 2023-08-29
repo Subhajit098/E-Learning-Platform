@@ -2,6 +2,8 @@ import {useRef,useState,useEffect} from 'react'
 import { Link,useNavigate } from 'react-router-dom'
 import styled from "styled-components";
 import { toast } from "react-toastify";
+import axios from 'axios';
+
 
 
 export default function Signin() {
@@ -11,15 +13,35 @@ export default function Signin() {
   const [password,setPassword]=useState("");
   const navigate = useNavigate();
 
+  const isValid=()=>{
+    let doProceed=true;
+    let errorMessage = "Please enter proper details"
+    if((email===null || email==="") &&(username===null || username==="") && (password===null || password==="")){
+      doProceed=false;
+    }
+    if(!doProceed) toast.warning(errorMessage)
+    else{
+      if(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)){
+        
+      }else{
+          doproceed = false;
+          toast.warning('Please enter the valid email')
+      }
+        }
+    return doProceed;
+  }
+
   const handleSubmit=(e)=>{
     e.preventDefault();
-    let userData={email,username,password};
+    let userData={email,username,password}
+    if(isValid()){
     fetch("http://localhost:8000/user",{
-      method:"POST",
-      headers:{'content-type':'application/json'},
-      body:JSON.stringify(userData)
+      method: "POST",
+      headers: { 'content-type': 'application/json','Access-Control-Allow-Headers':'*','Access-Control-Allow-Origin':'*' },
+       body: JSON.stringify(userData),
     })
     .then((res)=>{
+      console.log(res.data)
       toast.success("Sign in successful")
       navigate("/login")
     })
@@ -27,6 +49,9 @@ export default function Signin() {
       console.log(err);
       toast.error("Failed : ",err.message)
     })
+    }
+    
+
   }
 
   return (

@@ -5,6 +5,30 @@
       "username": "balsal",
       "password": "1234",
       "id": 1
+    },
+    {
+      "email": "subhajitdey2388@gmail.com",
+      "username": "asfsd",
+      "password": "sfafasf",
+      "id": 2
+    },
+    {
+      "email": "abc234@gmail.com",
+      "username": "abc",
+      "password": "abc",
+      "id": 3
+    },
+    {
+      "email": "akm23@gmail.com",
+      "username": "abir",
+      "password": "akmsdf",
+      "id": 4
+    },
+    {
+      "email": "sd23@gmail.com",
+      "username": "sd 345 @gmail.com",
+      "password": "fasdf",
+      "id": 5
     }
   ]
 }

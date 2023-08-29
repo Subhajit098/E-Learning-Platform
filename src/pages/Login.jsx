@@ -1,25 +1,38 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import styled from "styled-components";
 
 
 export default function Login() {
   return (
-    <div>
-        <h1>Please Log In</h1>
+    <LoginForm>
+        <h1 className='heading-tag'>Please Log In</h1>
       <form>
         <label>
-          <p>Username</p>
-          <input type="text" />
+          <p style={{
+            textAlign:"center"
+          }}>Username</p>
+          <input type="text" required/>
         </label>
         <label>
-          <p>Password</p>
-          <input type="password" />
+          <p style={{
+            textAlign:"center"
+          }}>Password</p>
+          <input type="password" required/>
         </label>
-        <div>
+        <div style={{  textAlign:"center", }}>
           <button type="submit">Submit</button>
         </div>
-        <Link to="/signin">Sign in</Link>
+        <div style={{  textAlign:"center"}}>
+        <Link to="/signin" >Sign in</Link>
+        </div>
       </form>
-    </div>
+    </LoginForm>
   )
 }
+
+const LoginForm =styled.div`
+    position:absolute;
+    top:30%;
+    left:45%
+`;

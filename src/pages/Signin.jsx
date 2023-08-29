@@ -2,7 +2,6 @@ import {useRef,useState,useEffect} from 'react'
 import { Link,useNavigate } from 'react-router-dom'
 import styled from "styled-components";
 import { toast } from "react-toastify";
-import axios from 'axios';
 
 
 

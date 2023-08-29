@@ -29,6 +29,12 @@
       "username": "sd 345 @gmail.com",
       "password": "fasdf",
       "id": 5
+    },
+    {
+      "email": "vik234@gmail.com",
+      "username": "vik234@gmail.com",
+      "password": "ascd",
+      "id": 6
     }
   ]
 }
